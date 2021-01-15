@@ -1,5 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h3>Cart Page</h3>
+    <div class="box-element mt-4">
+        <a class="btn btn-outline-secondary" href="{% url 'store' %}">&#8592;Continue Shopping</a>
+        <br>
+        <br>
+        <hr>
+        <table>
+            <td class="sum-display">Items:<Strong>2</Strong></td>
+            <td class="sum-display">Total:<Strong>$345</Strong></td>
+            <a class="checkout-page btn btn-success btn-lg" href="{% url 'checkout' %}"
+               style="float: right;">Checkout</a>
+        </table>
+        <br>
+    </div>
+    <div class="box-element mt-4">
+        <table>
+            <th style="flex: 2;"></th>
+            <th style="flex: 2;">Item</th>
+            <th style="flex: 1;">Price</th>
+            <th style="flex: 1;">Quantity</th>
+            <th style="flex: 1;">Item</th>
+        </table>
+    </div>
 {% endblock %}

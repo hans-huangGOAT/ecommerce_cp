@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block content %}
-    <h3>Store Page</h3>
+    <div class="row mt-4">
+        <div class="col-lg-4 product-card">
+            <img class="product-img" src="{% static 'images/cart_image_placeholder.png' %}">
+            <div class="box-element">
+                <h6 style="margin-top: 10px;">Name</h6>
+                <hr>
+                <button class="btn  btn-outline-secondary" id="add_cart">Add to Cart</button>
+                <a class="btn btn-outline-success mx-2" id="view">View</a>
+                <h4 style="display: inline-block; float: right">$40</h4>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}
