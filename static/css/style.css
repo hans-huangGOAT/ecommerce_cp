@@ -68,3 +68,17 @@ body{
     font-size: 18px;
     border-bottom: 1px solid black;
 }
+
+.form-field{
+    display: inline-block;
+    width: 280px;
+    padding: 10px;
+}
+
+#summary{
+    display: flex;
+}
+
+.hidden{
+    display: none;
+}

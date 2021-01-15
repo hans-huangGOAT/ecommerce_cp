@@ -1,5 +1,64 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h3>Checkout Page</h3>
+    <div class="row">
+        <div class="col-md">
+            <div class="box-element mt-4">
+                <form id="form">
+                    <div class="user-info">
+                        <h5>User Information:</h5>
+                        <div class="form-field">
+                            <input type="text" class="form-control" name="name" placeholder="Name...">
+                        </div>
+                        <div class="form-field">
+                            <input type="text" class="form-control" name="email" placeholder="E-mail...">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="shipping-info">
+                        <h5>Shipping Information:</h5>
+                        <div class="form-field">
+                            <input type="text" class="form-control" name="address" placeholder="Address...">
+                        </div>
+                        <div class="form-field">
+                            <input type="text" class="form-control" name="city" placeholder="City...">
+                        </div>
+                        <div class="form-field">
+                            <input type="text" class="form-control" name="state" placeholder="State...">
+                        </div>
+                        <div class="form-field">
+                            <input type="text" class="form-control" name="zipcode" placeholder="Zipcode...">
+                        </div>
+                        <div class="form-field">
+                            <input type="text" class="form-control" name="country" placeholder="Country...">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success">Make Payment</button>
+                    </div>
+                </form>
+            </div>
+            <div class="box-element mt-4 hidden">
+                <h5>Payment Method</h5>
+            </div>
+        </div>
+        <div class="col-md mt-4">
+            <div class="box-element">
+                <a href="{% url 'cart' %}" class="btn btn-outline-secondary">&#8592;Back to Cart</a>
+                <hr>
+                <h4>Order Summary</h4>
+                <hr>
+                <div id="summary">
+                    <div style="flex:2"></div>
+                    <div style="flex:2">Mount of Olives Book</div>
+                    <div style="flex:1">$50.00</div>
+                    <div style="flex:1">x2</div>
+
+                </div>
+                <h5>Items: 2</h5>
+                    <h5>Total: $29.98</h5>
+            </div>
+        </div>
+    </div>
 {% endblock %}
