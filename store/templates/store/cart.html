@@ -7,20 +7,31 @@
         <br>
         <hr>
         <table>
-            <td class="sum-display">Items:<Strong>2</Strong></td>
-            <td class="sum-display">Total:<Strong>$345</Strong></td>
-            <a class="checkout-page btn btn-success btn-lg" href="{% url 'checkout' %}"
-               style="float: right;">Checkout</a>
+            <tr>
+                <td class="sum-display">Items:<Strong>2</Strong></td>
+                <td class="sum-display">Total:<Strong>$345</Strong></td>
+                <a class="checkout-page btn btn-success btn-lg" href="{% url 'checkout' %}"
+                   style="float: right;">Checkout</a>
+            </tr>
         </table>
         <br>
     </div>
     <div class="box-element mt-4">
-        <table>
-            <th style="flex: 2;"></th>
-            <th style="flex: 2;">Item</th>
-            <th style="flex: 1;">Price</th>
-            <th style="flex: 1;">Quantity</th>
-            <th style="flex: 1;">Item</th>
-        </table>
+
+            <div class="cart-row headd">
+                <div style="flex: 2;"></div>
+                <div style="flex: 2;">Item</div>
+                <div style="flex: 1;">Price</div>
+                <div style="flex: 1;">Quantity</div>
+                <div style="flex: 1;">Total</div>
+            </div>
+            <div class="cart-row">
+                <div style="flex: 2;">1</div>
+                <div style="flex: 2;">1</div>
+                <div style="flex: 1;">1</div>
+                <div style="flex: 1;">1</div>
+                <div style="flex: 1;">1</div>
+            </div>
+
     </div>
 {% endblock %}
