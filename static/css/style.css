@@ -82,3 +82,7 @@ body{
 .hidden{
     display: none;
 }
+
+.row-image{
+    width: 125px;
+}

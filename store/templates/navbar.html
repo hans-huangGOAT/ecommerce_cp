@@ -17,8 +17,7 @@
                 <a href="{% url 'cart' %}">
                     <img src="{% static 'images/cart.png' %}" class="cart-nav">
                 </a>
-                <p id="total-items" style="font-size: 15px; text-align: center;">5</p>
-
+                <p id="total-items" style="font-size: 15px; text-align: center;">{{ cart_items }}</p>
             </div>
         </div>
     </div>
