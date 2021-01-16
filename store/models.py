@@ -18,6 +18,13 @@ class Product(models.Model):
     digital = models.BooleanField(null=True)
     image = models.ImageField(default='static/images/cart_image_placeholder.png', blank=True)
 
+    @property
+    def imageURL(self):
+        try:
+            return self.image.url
+        except:
+            return ''
+
     def __str__(self):
         return self.name
 

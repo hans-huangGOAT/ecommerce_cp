@@ -28,7 +28,7 @@
         </div>
         {% for orderitem in orderitems %}
             <div class="cart-row">
-                <div style="flex: 2;"><img class="row-image" src="{{ orderitem.product.image.url }}" ></div>
+                <div style="flex: 2;"><img class="row-image" src="{{ orderitem.product.imageURL }}" ></div>
                 <div style="flex: 2;">{{ orderitem.product.name }}</div>
                 <div style="flex: 1;">{{ orderitem.product.price }}</div>
                 <div style="flex: 1;">{{ orderitem.quantity }}</div>
