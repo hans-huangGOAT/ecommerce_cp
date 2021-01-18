@@ -11,7 +11,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
     <script type="text/javascript">
-        function getCookie(name) {
+        var user = '{{ request.user }}'
+
+        function getToken(name) {
             let cookieValue = null;
             if (document.cookie && document.cookie !== '') {
                 const cookies = document.cookie.split(';');
@@ -26,8 +28,30 @@
             }
             return cookieValue;
         }
+        const csrftoken = getToken('csrftoken');
 
-        const csrftoken = getCookie('csrftoken');
+        function getCookie(name){
+            var cookieArr = document.cookie.split(";");
+
+            for(let i = 0; i <cookieArr.length; i++){
+                let cookiePair = cookieArr[i].split("=");
+
+                if(name == cookiePair[0].trim()){
+                    return decodeURIComponent(cookiePair[1])
+                }
+            }
+
+            return null
+        }
+
+        let cart = JSON.parse(getCookie('cart'))
+        if(cart == undefined){
+            cart = {}
+            console.log("Cart was created!")
+            document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+        }
+
+        console.log("Cart:",cart)
     </script>
 </head>
 <body>

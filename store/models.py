@@ -14,7 +14,7 @@ class Customer(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True, blank=True)
-    price = models.FloatField(null=True, blank=True)
+    price = models.DecimalField(max_digits=7, decimal_places=2,null=True, blank=True)
     digital = models.BooleanField(null=True)
     image = models.ImageField(default='static/images/cart_image_placeholder.png', blank=True)
 
@@ -34,6 +34,16 @@ class Order(models.Model):
     date_ordered = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False, null=True)
     transaction_id = models.CharField(max_length=200, null=True, blank=True)
+
+    @property
+    def shipping(self):
+        shipping = False
+        orderitems = self.orderitem_set.all()
+        for item in orderitems:
+            if not item.product.digital:
+                shipping = True
+
+        return shipping
 
     @property
     def get_cart_items(self):
